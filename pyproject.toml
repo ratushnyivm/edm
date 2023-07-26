@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "edm"
+version = "0.1.0"
+description = ""
+authors = ["ratushnyyvm <ratushnyyvm@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.100.0"}
+sqlalchemy = "^2.0.19"
+asyncpg = "^0.28.0"
+alembic = "^1.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
