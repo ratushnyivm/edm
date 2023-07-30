@@ -7,10 +7,13 @@ start:
 lint:
 	poetry run flake8 .
 
+shell:
+	poetry run python -i src/main.py
+
 revision:
-	alembic revision --autogenerate
+	poetry run alembic revision --autogenerate
 
 upgrade:
-	alembic upgrade head
+	poetry run alembic upgrade head
 
 # alembic init -t async migrations

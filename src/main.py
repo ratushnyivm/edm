@@ -2,7 +2,12 @@ from typing import Union
 
 from fastapi import FastAPI
 
-app = FastAPI()
+from src.core.config import settings
+from src.documents.router import router as router_documents
+
+app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
+
+app.include_router(router_documents)
 
 
 @app.get("/")
