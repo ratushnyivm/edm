@@ -15,7 +15,7 @@ class DocumentCode(Base):
         unique=True,
         nullable=False
     )
-    documents: Mapped['Document'] = relationship(
+    documents: Mapped[list['Document']] = relationship(
         back_populates='document_code'
     )
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
