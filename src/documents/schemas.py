@@ -28,12 +28,14 @@ class DocumentCreate(BaseModel):
     number: str = Field(min_length=1, max_length=30)
     title: str = Field(min_length=1, max_length=100)
     document_code_id: int
+    document_code_number: int | None = Field('null', ge=1)
 
 
 class DocumentUpdate(BaseModel):
     number: str = Field(min_length=1, max_length=30)
     title: str = Field(min_length=1, max_length=100)
     document_code_id: int
+    document_code_number: int | None = Field('null', ge=1)
 
 
 class DocumentShow(BaseModel):
@@ -41,6 +43,7 @@ class DocumentShow(BaseModel):
     number: str
     title: str
     document_code_id: int
+    document_code_number: int | None
     created_at: datetime
     updated_at: datetime | None
     model_config = ConfigDict(from_attributes=True)

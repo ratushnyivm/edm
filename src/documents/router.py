@@ -5,7 +5,7 @@ from src.core.database import get_async_session
 from src.documents import repository, schemas
 
 router = APIRouter(
-    prefix='/documents',
+    prefix='/api/documents',
     tags=['Documents']
 )
 
@@ -70,7 +70,7 @@ async def update_document_code(
     return updated_document_code
 
 
-@router.delete('codes/{id}')
+@router.delete('/codes/{id}')
 async def delete_document_code(
     id: int,
     session: AsyncSession = Depends(get_async_session)

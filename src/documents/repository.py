@@ -90,7 +90,8 @@ async def create_document_in_db(
     new_document = models.Document(
         number=document.number,
         title=document.title,
-        document_code_id=document.document_code_id
+        document_code_id=document.document_code_id,
+        document_code_number=document.document_code_number
     )
     session.add(new_document)
     await session.commit()
@@ -122,6 +123,7 @@ async def update_document_in_db(
     document_in_db.number = document.number
     document_in_db.title = document.title
     document_in_db.document_code_id = document.document_code_id
+    document_in_db.document_code_number = document.document_code_number
 
     session.add(document_in_db)
     await session.commit()
