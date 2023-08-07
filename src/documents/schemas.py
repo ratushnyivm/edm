@@ -14,11 +14,12 @@ class DocumentCodeUpdate(BaseModel):
 
 
 class DocumentCodeShow(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     code: str
     created_at: datetime
     updated_at: datetime | None
-    model_config = ConfigDict(from_attributes=True)
 
 
 # Documents
@@ -39,6 +40,8 @@ class DocumentUpdate(BaseModel):
 
 
 class DocumentShow(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     number: str
     title: str
@@ -46,4 +49,3 @@ class DocumentShow(BaseModel):
     document_code_number: int | None
     created_at: datetime
     updated_at: datetime | None
-    model_config = ConfigDict(from_attributes=True)
